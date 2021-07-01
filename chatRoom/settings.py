@@ -72,6 +72,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chatRoom.wsgi.application'
 ASGI_APPLICATION = 'chatRoom.asgi.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            # "hosts": [('127.0.0.1', 6379)],
+            "hosts": [('redis://:UQfaUBz2Yb1H2gHbvkem5h26bhJ5lg0K@redis-18711.c11.us-east-1-3.ec2.cloud.redislabs.com:18711')],
+        },
+    },
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
